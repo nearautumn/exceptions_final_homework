@@ -1,13 +1,13 @@
-import javax.swing.*;
-
 public class StringToFileSaver {
 
     private InputReader inputReader;
     private InputChecker inputChecker;
+    private FileSaver fileSaver;
 
-    public StringToFileSaver(InputReader inputReader, InputChecker inputChecker) {
+    public StringToFileSaver(InputReader inputReader, InputChecker inputChecker, FileSaver fileSaver) {
         this.inputReader = inputReader;
         this.inputChecker = inputChecker;
+        this.fileSaver = fileSaver;
     }
 
     public void init() {
@@ -22,9 +22,8 @@ public class StringToFileSaver {
                 System.out.println(e.getMessage());
                 return;
             }
-
+            fileSaver.save(userString);
             System.out.println("done");
         }
     }
-
 }

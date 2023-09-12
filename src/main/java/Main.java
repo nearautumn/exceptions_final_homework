@@ -3,10 +3,9 @@ public class Main {
 
         InputReader inputReader = new InputReader("Фамилия Имя Отчество датарождения номертелефона пол");
         InputChecker inputChecker = new InputChecker();
-        StringToFileSaver stringToFileSaver = new StringToFileSaver(inputReader, inputChecker);
+        FileSaver fileSaver = new FileSaver();
+        StringToFileSaver stringToFileSaver = new StringToFileSaver(inputReader, inputChecker, fileSaver);
 
         stringToFileSaver.init();
-
-
     }
 }
