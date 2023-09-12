@@ -5,18 +5,23 @@ public class InputReader {
 
     private String userInput;
     private Scanner scanner;
+    private String lineFormat;
+    public static final String ERROR = "error";
 
-    public InputReader() {
+    public InputReader(String lineFormat) {
         scanner = new Scanner(System.in);
+        this.lineFormat = lineFormat;
     }
 
     public String readData() {
+
+        System.out.println("Enter the line: " + lineFormat);
 
         try {
             return scanner.nextLine();
         } catch (NoSuchElementException | IllegalStateException e) {
             System.out.println(e.getMessage());
-            return "-1";
+            return ERROR;
         }
     }
 }
