@@ -1,9 +1,13 @@
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Возвращает строку из консоли. Использует Scanner. При возникновении исключений NoSuchElementException и
+ * IllegalStateException возвращает код ошибки.
+ * @author Andrei Aliaksandrau
+ */
 public class InputReader {
 
-    private String userInput;
     private Scanner scanner;
     private String lineFormat;
     public static final String ERROR = "error";

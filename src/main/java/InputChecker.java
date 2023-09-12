@@ -1,5 +1,10 @@
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Содержит в себе метод для проверки переданной строки на соответствие необходимому формату. При несоовтетствии
+ * пробрасывает WrongFormatException
+ * @author Andrei Aliaksandrau
+ */
 public class InputChecker {
 
     private String[] strings;
@@ -8,6 +13,16 @@ public class InputChecker {
         strings = new String[6];
     }
 
+    /**
+     * Проверяет строку на соответствие необходимому формату:
+     * фамилия, имя, отчество - строки
+     * датарождения - строка формата dd.mm.yyyy
+     * номертелефона - целое беззнаковое число без форматирования
+     * пол - символ латиницей f или m.
+     * @param string строка, которую необходимо проверить
+     * @throws WrongFormatException при несоответсвии переданной строки нужному формату.
+     * @author Andrei Aliaksandrau
+     */
     public void check(String string) throws WrongFormatException {
 
         strings = string.split(" ");

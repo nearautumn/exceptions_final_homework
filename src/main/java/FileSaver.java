@@ -6,10 +6,19 @@ import java.util.Arrays;
 
 public class FileSaver {
 
+    /**
+     * Позволяет сохранять строку в файл. Название файла образуется по первому слову в строке (фамилия).
+     * @author Andrei Aliaksandrau
+     */
     public FileSaver() {
-
     }
 
+    /**
+     * Позволяет сохранять строку в файл. Название файла образуется по первому слову в строке (фамилия). При
+     * возникновении ошибок ввода/вывода обрабатывает их.
+     * @param userString строка, которая будет записана в файл.
+     * @author Andrei Aliaksandrau
+     */
     public void save(String userString) {
 
         String[] strings = userString.split(" ");
