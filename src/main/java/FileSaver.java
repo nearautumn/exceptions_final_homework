@@ -14,7 +14,7 @@ public class FileSaver {
 
         String[] strings = userString.split(" ");
 
-        File file = new File(strings[0]);
+        File file = new File(strings[0].toLowerCase());
         try (BufferedWriter bufWriter = new BufferedWriter(new FileWriter(file, true))) {
             bufWriter.write(userString + "\n");
         } catch (IOException e) {

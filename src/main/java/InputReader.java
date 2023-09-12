@@ -15,7 +15,7 @@ public class InputReader {
 
     public String readData() {
 
-        System.out.println("Enter the line: " + lineFormat);
+        System.out.println("Введите строку следующего формата: " + lineFormat);
 
         try {
             return scanner.nextLine();

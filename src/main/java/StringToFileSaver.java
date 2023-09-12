@@ -14,7 +14,7 @@ public class StringToFileSaver {
 
         String userString = inputReader.readData();
         if (userString.equals(InputReader.ERROR)) {
-            System.out.println("Something wrong happened...");
+            System.out.println("Что-то сломалось при чтении данных...");
         } else {
             try {
                 inputChecker.check(userString);
@@ -23,7 +23,7 @@ public class StringToFileSaver {
                 return;
             }
             fileSaver.save(userString);
-            System.out.println("done");
+            System.out.println("Выполнено!");
         }
     }
 }

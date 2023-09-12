@@ -12,11 +12,11 @@ public class InputChecker {
 
         strings = string.split(" ");
         for (String s: strings) {
-            if (s.equals(" ") || s.isEmpty()) throw new WrongFormatException("Empty string detected");
+            if (s.equals(" ") || s.isEmpty()) throw new WrongFormatException("Обнаружена пустая строка");
         }
 
         if (strings.length != 6) {
-            throw new WrongFormatException("Wrong line format");
+            throw new WrongFormatException("Введенная строка не соответствует заданному формату");
         }
 
         String lastName = strings[0];
@@ -40,20 +40,20 @@ public class InputChecker {
     private void checkForDigits(@NotNull String word) throws WrongFormatException {
         for (int i = 0; i < word.length(); i++) {
             if (!Character.isAlphabetic(word.charAt(i))) {
-                throw new WrongFormatException("Name should not contain numbers!");
+                throw new WrongFormatException("Имя, фамилия и отчество могут состоять только из букв");
             }
         }
     }
 
     private void checkDate(@NotNull String date) throws WrongFormatException {
         String[] dateArr = date.split("\\.");
-        if (dateArr.length != 3) throw new WrongFormatException("Wrong date format");
+        if (dateArr.length != 3) throw new WrongFormatException("Неправильный формат даты");
 
         for (String s : dateArr) {
             try {
                 Integer.parseInt(s);
             } catch (NumberFormatException e) {
-                throw new WrongFormatException("Date should be only in digital format");
+                throw new WrongFormatException("Дата не может содержать иных символов, кроме цифр и точки");
             }
         }
     }
@@ -61,19 +61,19 @@ public class InputChecker {
     private void checkPhoneNumber(@NotNull String phoneNumber) throws WrongFormatException {
 
         try {
-            Integer.parseInt(phoneNumber);
+            Long.parseLong(phoneNumber);
         } catch (NumberFormatException e) {
-            throw new WrongFormatException("Wrong phone number format");
+            throw new WrongFormatException("Неверный формат номера телефона");
         }
 
-        int phoneNumberInt = Integer.parseInt(phoneNumber);
-        if (phoneNumberInt < 0) throw new WrongFormatException("Wrong phone number format");
+        long phoneNumberLong = Long.parseLong(phoneNumber);
+        if (phoneNumberLong < 0) throw new WrongFormatException("Неверный формат номера телефона");
     }
 
     private void checkSex(@NotNull String sex) throws WrongFormatException {
         if (!sex.equals("m")) {
             if (!sex.equals("f")) {
-                throw new WrongFormatException("Wrong sex format (should be m or f)");
+                throw new WrongFormatException("Неверно указан пол");
             }
         }
     }
